@@ -3,10 +3,10 @@ import React from 'react'
 export default class Profile extends React.Component {
   render() {
     let data = this.props.data;
-    let followers = `${data.homeUrl}/followers`;
-    let repositories = `${data.homeUrl}?tab=repositories`;
-    let following = `${data.homeUrl}/following`;
-    if (data.notFound === 'Not Found')
+    let followers = `${data.html_url}/followers`;
+    let repositories = `${data.html_url}?tab=repositories`;
+    let following = `${data.html_url}/following`;
+    if (data.message === 'Not Found')
       return (
          <div className="notfound">
            <h2>Oops !!!</h2>
@@ -17,8 +17,8 @@ export default class Profile extends React.Component {
     return (
       <section className="github--profile">
         <div className="github--profile__info">
-          <a href={data.homeUrl} target="_blank" title={data.name || data.username}><img src={data.avatar} alt={data.username}/></a>
-          <h2><a href={data.homeUrl} title={data.username} target="_blank">{data.name || data.username}</a></h2>
+          <a href={data.html_url} target="_blank" title={data.name || data.login}><img src={data.avatar_url} alt={data.login}/></a>
+          <h2><a href={data.html_url} title={data.login} target="_blank">{data.name || data.login}</a></h2>
           <h3>{data.location || "Time is illussion"}</h3>
         </div>
         <div className="github--profile__state">
@@ -27,7 +27,7 @@ export default class Profile extends React.Component {
               <a href={followers} target="_blank" title="Number Of Followers"><i>{data.followers}</i><span>Followers</span></a>
             </li>
             <li>
-              <a href={repositories} target="_blank" title="Number Of Repository"><i>{data.repos}</i><span>Repository</span></a>
+              <a href={repositories} target="_blank" title="Number Of Repository"><i>{data.public_repos}</i><span>Repository</span></a>
             </li>
             <li>
               <a href={following} target="_blank" title="Number Of Following"><i>{data.following}</i><span>Following</span></a>
