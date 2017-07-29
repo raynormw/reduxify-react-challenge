@@ -1,9 +1,10 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-import './App.css';
-import Home from './Home';
-import Github from './Github';
+import './App.css'
+import Home from './Home'
+import Github from './Github'
 
 class App extends React.Component {
   render() {

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import SearchProfile from './Search';
-import Profile from './Profile';
+import SearchProfile from './Search'
+import Profile from './Profile'
 
-const API = 'https://api.github.com/users';
+const API = 'https://api.github.com/users'
 
 class Github extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class Github extends React.Component {
   }
 
   componentDidMount() {
-    this._fetchProfile(this.state.username);
+    this._fetchProfile(this.state.username)
   }
 
   render() {
@@ -65,4 +65,4 @@ class Github extends React.Component {
   }
 }
 
-export default Github;
+export default Github
