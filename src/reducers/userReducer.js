@@ -18,11 +18,11 @@ const initialState = {
 export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case 'FETCH_USER':
-      return {...state, fetching: true}
+      return {...state, fetching: true, fetched: false}
     case 'FETCH_SUCCESS':
-      return {...state, fetching: false, fetched: true, data: action.payload}
+      return {...state, fetching: false, fetched: true, data: action.payload, error: null}
     case 'FETCH_ERROR':
-      return {...state, fetching: false, error: action.payload}
+      return {...state, fetching: false, fetched: false, error: action.payload}
     default:
       return state
   }

@@ -56,17 +56,17 @@ a {
   box-sizing: border-box;
 }
 
-.notfound {
+.notfound, .loading {
   background: #fff;
   padding: 1.875rem;
   text-align: center;
 }
-.notfound h2 {
+.notfound h2, .loading h2 {
   font-size: 2rem;
   color: #2368bd;
   margin-bottom: .625rem;
 }
-.notfound p {
+.notfound p, .loading p {
   font-size: 1rem;
   color: #a3b6bb;
 }

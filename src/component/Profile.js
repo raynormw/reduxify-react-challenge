@@ -13,6 +13,20 @@ export default class Profile extends React.Component {
            <p>Username not found, please correct your input..</p>
          </div>
       );
+    else if (this.props.fetching === true)
+      return (
+          <div className="loading">
+            <h2>Loading..</h2>
+            <p>Fetching data..</p>
+          </div>
+      );
+    else if (this.props.error !== null)
+      return (
+         <div className="notfound">
+           <h2>Oops !!!</h2>
+           <p>Something gone wrong, please check your input and reload</p>
+         </div>
+      );
     else
     return (
       <section className="github--profile">

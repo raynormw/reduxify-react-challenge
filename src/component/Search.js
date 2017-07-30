@@ -4,7 +4,6 @@ export default class SearchProfile extends React.Component {
   _handleForm(e) {
     e.preventDefault();
     let username = this.refs.username.value
-    console.log(this.props, 'props');
     this.props.getProfile(username)
     this.refs.username.value = ''
   }

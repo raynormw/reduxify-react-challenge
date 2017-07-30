@@ -19,7 +19,12 @@ class Github extends React.Component {
         </Link>
         <section id="card">
           <SearchProfile getProfile={this.props.getProfile.bind(this)}/>
-          <Profile data={this.props.data} />
+          <Profile
+            data={this.props.data}
+            fetching={this.props.fetching}
+            fetched={this.props.fetched}
+            error={this.props.error}
+          />
         </section>
         <span className="author">GitHub Card With ReactJs - Created By <a href="http://tirtawiryaputra.com" target="_blank" rel="noopener noreferrer" title="Tirta Wirya Putra">Tirta Wirya Putra</a></span>
       </div>
@@ -41,4 +46,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Github);
-//export default Github
